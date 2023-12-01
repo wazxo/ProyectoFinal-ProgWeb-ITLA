@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$bd = "libreria";
-$usuario = "root";
-$contrasenia = "";
+$host = "sql112.infinityfree.com";
+$bd = "if0_35526361_libreria";
+$usuario = "if0_35526361";
+$contrasenia = "Fce8I3oFIr3M";
 
 try {
 
