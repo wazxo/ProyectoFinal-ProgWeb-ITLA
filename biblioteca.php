@@ -96,6 +96,16 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
+        @media screen and (max-width: 600px) {
+        .card-title {
+        font-size: 14px;
+            }
+        }
+        .card-subtitle{
+            font-size: 12px;
+        }
+
     </style>
 
 
@@ -137,15 +147,14 @@
                             <img src="./img/Libros/<?php echo $libro['imagen']; ?>" class="card-img-top" alt=""
                                 style="object-fit: cover; aspect-ratio: 2/3;">
                             <div class="card-body">
-                                <h5 class="card-title"
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: calc(1.2vw + 0.5em);">
-                                    <?php echo mb_substr($libro['nombre'], 0, 20, 'UTF-8'); ?>
-                                </h5>
-                                <h6
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: calc(1.2vw + 0.3em);">
-                                    Autor:
-                                    <?php echo mb_substr($libro['Autor'], 0, 20, 'UTF-8'); ?>
-                                </h6>
+                            <h5 class="card-title"
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                                <?php echo mb_substr($libro['nombre'], 0, 20, 'UTF-8'); ?>
+                            </h5>
+                            <h6 class="card-subtitle"
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                                <?php echo mb_substr($libro['Autor'], 0, 20, 'UTF-8'); ?>
+                            </h6>
                             </div>
                             <div class="card-footer p-0 px-2 text-center">
                                 <span style="font-size: 0.8rem;">
@@ -169,13 +178,6 @@
 
     <div class="futter">
         <footer class="py-3 my-4">
-            <ul class="nav justify-content-center text-center border-bottom pb-3 mb-3 fw-bold">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Servicios</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Productos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Nosotros</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacto</a></li>
-            </ul>
             <p class="text-center text-center ">© 2023 Company, Inc</p>
         </footer>
     </div>

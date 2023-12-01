@@ -125,7 +125,7 @@
             break;
 
         case "Modificar":
-            $sentenciaSQL = $conexion->prepare("UPDATE libros SET nombre=:nombre, Autor=:autor, tipo=:tipo, descripcion=:descripcion  WHERE id=:id");
+            $sentenciaSQL = $conexion->prepare("UPDATE libros SET nombre=:nombre, Autor=:autor, tipo=:tipo, descripcion=:descripcion, link=:link  WHERE id=:id");
             $sentenciaSQL->bindParam(':id', $txtID);
             $sentenciaSQL->bindParam(':nombre', $txtNombre);
             $sentenciaSQL->bindParam(':autor', $txtAutor);
@@ -328,61 +328,59 @@
     <br>
 
     <div class="col-md-11 mx-auto text-center">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Autor</th>
-                    <th>Tipo</th>
-                    <th>Descripcion</th>
-                    <th>Link</th>
-                    <th>Imagen</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($listaLibros as $libro) { ?>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
                     <tr>
-                        <td>
-                            <?php echo $libro['id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $libro['nombre']; ?>
-                        </td>
-                        <td>
-                            <?php echo $libro['Autor']; ?>
-                        </td>
-                        <td>
-                            <?php echo $libro['tipo']; ?>
-                        </td>
-                        <td>
-                            <?php echo $libro['descripcion']; ?>
-                        </td>
-                        <td>
-                            <?php echo $libro['link']; ?>
-                        </td>
-                        <td>
-                            <img class="img-thumbnail rounded mx-auto" src="./img/Libros/<?php echo $libro['imagen']; ?>"
-                                width="100" alt="">
-
-                        </td>
-                        <td>
-                            <form method="post">
-
-                                <input type="hidden" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
-
-                                <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" />
-
-                                <input type="submit" name="accion" value="Borrar" class="btn btn-danger" />
-
-                            </form>
-                        </td>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Link</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($listaLibros as $libro) { ?>
+                        <tr>
+                            <td>
+                                <?php echo ($libro['id']); ?>
+                            </td>
+                            <td>
+                                <?php echo ($libro['nombre']); ?>
+                            </td>
+                            <td>
+                                <?php echo $libro['Autor']; ?>
+                            </td>
+                            <td>
+                                <?php echo $libro['tipo']; ?>
+                            </td>
+                            <td>
+                                <?php echo ($libro['descripcion']); ?>
+                            </td>
+                            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                                <?php echo mb_substr($libro['link'], 0, 20, 'UTF-8'); ?>
+                            </td>
+                            <td>
+                                <img class="img-thumbnail rounded mx-auto" src="./img/Libros/<?php echo $libro['imagen']; ?>"
+                                    width="100" alt="">
+                            </td>
+                            <td>
+                                <form method="post">
+                                    <input type="hidden" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
+                                    <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" />
+                                    <input type="submit" name="accion" value="Borrar" class="btn btn-danger" />
+                                </form>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
+
 
 
 

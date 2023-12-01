@@ -105,6 +105,8 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
+    }
     </style>
 
 
@@ -119,18 +121,17 @@
         <h2 class="text-center mb-4">Ultimos Agregados</h2>
         <div class="row">
             <?php foreach ($listaLibros as $libro) { ?>
-                <div class="col-4 col-md-2 mb-1 mt-4 libro-card" data-link="<?php echo $libro['link']; ?>">
+                <div class="col-3 col-md-2 mb-1 mt-4 libro-card" data-link="<?php echo $libro['link']; ?>">
                     <div class="card">
                         <img src="./img/Libros/<?php echo $libro['imagen']; ?>" class="card-img-top" alt=""
                             style="object-fit: cover; aspect-ratio: 2/3;">
-                        <div class="card-body">
+                        <div class="card-body fs-5">
                             <h5 class="card-title"
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: calc(1.2vw + 0.5em);">
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
                                 <?php echo mb_substr($libro['nombre'], 0, 20, 'UTF-8'); ?>
                             </h5>
-                            <h6
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: calc(1.2vw + 0.3em);">
-                                Autor:
+                            <h6 class="card-subtitle"
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: 13px">
                                 <?php echo mb_substr($libro['Autor'], 0, 20, 'UTF-8'); ?>
                             </h6>
                         </div>
@@ -205,13 +206,6 @@
 
     <div class="futter">
         <footer class="py-3 my-4">
-            <ul class="nav justify-content-center text-center border-bottom pb-3 mb-3 fw-bold">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Servicios</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Productos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Nosotros</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacto</a></li>
-            </ul>
             <p class="text-center text-center ">© 2023 Company, Inc</p>
         </footer>
     </div>

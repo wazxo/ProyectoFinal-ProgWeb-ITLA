@@ -282,7 +282,10 @@
         </div>
     </div>
     <br>
+
+
     <div class="col-md-11 mx-auto text-center">
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -292,24 +295,17 @@
                     <th>Fecha Nacimiento</th>
                     <th>Fecha Defuncion</th>
                     <th>Biografía</th>
+                    <th>Imagen</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($listaAutores as $autor) { ?>
                     <tr>
-                        <td>
-                            <?php echo $autor['id']; ?>
-                        </td>
-                        <td>
-                            <?php echo $autor['nombre']; ?>
-                        </td>
-                        <td>
-                            <?php echo $autor['nacionalidad']; ?>
-                        </td>
-                        <td>
-                            <?php echo $autor['fecha_nacimiento']; ?>
-                        </td>
+                        <td><?php echo $autor['id']; ?></td>
+                        <td><?php echo $autor['nombre']; ?></td>
+                        <td><?php echo $autor['nacionalidad']; ?></td>
+                        <td><?php echo $autor['fecha_nacimiento']; ?></td>
                         <td>
                             <?php echo $autor['fecha_defuncion']; ?>
                         </td>
@@ -317,17 +313,14 @@
                             <?php echo $autor['biografia']; ?>
                         </td>
                         <td>
-                            <?php echo $autor['imagen']; ?>
+                            <img class="img-thumbnail rounded mx-auto" src="./img/Autores/<?php echo $autor['imagen']; ?>"
+                                width="100" alt="">
                         </td>
                         <td>
                             <form method="post">
-
                                 <input type="hidden" name="txtID" id="txtID" value="<?php echo $autor['id']; ?>" />
-
                                 <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary" />
-
                                 <input type="submit" name="accion" value="Borrar" class="btn btn-danger" />
-
                             </form>
                         </td>
                     </tr>
@@ -335,19 +328,14 @@
             </tbody>
         </table>
     </div>
+</div>
+
 
 
 
 
     <div class="futter">
         <footer class="py-3 my-4">
-            <ul class="nav justify-content-center text-center border-bottom pb-3 mb-3 fw-bold">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Servicios</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Productos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Nosotros</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacto</a></li>
-            </ul>
             <p class="text-center text-center ">© 2023 Company, Inc</p>
         </footer>
     </div>
